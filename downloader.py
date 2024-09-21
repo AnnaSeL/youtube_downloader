@@ -28,12 +28,14 @@ def download_audio():
     path = get_path()
     audio.download(path, filename=f"{yt.title}.mp3")
 
+def get_choice():
+    choice = input("Would you like to download video or audio (video/audio) ? ")
+    if choice == "video":
+        download_video()
+    elif choice == "audio":
+        download_audio()
+    else:
+        "Wrong mode."
 
-choice = input("Would you like to download video or audio (video/audio) ? ")
-if choice == "video":
-    download_video()
-elif choice == "audio":
-    download_audio()
-else:
-    "Wrong mode."
-
+if __name__ == "__main__":
+    get_choice()
